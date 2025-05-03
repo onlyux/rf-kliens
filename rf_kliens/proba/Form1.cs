@@ -35,7 +35,7 @@ namespace proba
         private void Form1_Load(object sender, EventArgs e)
         {
             termek_betolt();
-            
+            opcio_betolt();
             
             
         }
@@ -44,6 +44,7 @@ namespace proba
         {
 
         }
+
         private void termek_betolt()
         {
             // Termékek behívása API-on keresztül
@@ -79,6 +80,45 @@ namespace proba
                 {
                     //ha üres a content vagy az api elérhetetlensége miatt, pl. nem megy a szerver, akkor fut ide
                     MessageBox.Show(api_termek.ToString());
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void opcio_betolt()
+        {
+            // Opciók behívása API-on keresztül
+            try
+            {
+                Api proxy = new Api(url, key);
+
+                ApiResponse<List<OptionDTO>> response = proxy.ProductOptionsFindAll();
+
+
+                if (response.Content != null)
+                {
+                    foreach (var item in response.Content)
+                    {
+                        Options current = new Options
+                        {
+                            Name = item.Name
+
+                        };
+                        options.Add(current);
+                    }
+                    //MessageBox.Show("Found " + response.Content.Count + " options");
+                    listBox2.DataSource = options;
+                    listBox2.DisplayMember = "Name";
+
+
+                }
+                else
+                {
+                    //ha üres a content vagy az api elérhetetlensége miatt, pl. nem megy a szerver, akkor fut ide
+                    MessageBox.Show(response.ToString());
 
                 }
             }
