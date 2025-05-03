@@ -96,6 +96,20 @@ namespace proba
             }
         }
 
+        private void button_hozzaad_Click(object sender, EventArgs e)
+        {
+            assign();
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            opt_torles();
+        }
+
+        private void button_unassign_Click(object sender, EventArgs e)
+        {
+            unassign();
+        }
 
         private void termek_betolt()
         {
@@ -156,8 +170,8 @@ namespace proba
                     {
                         Options current = new Options
                         {
-                            Name = item.Name
-
+                            Name = item.Name,
+                            Bvin = item.Bvin
                         };
                         options.Add(current);
                     }
@@ -277,5 +291,98 @@ namespace proba
             }
         }
 
+        private void assign()
+        {
+            try
+            {
+                Api proxy = new Api(url, key);
+
+                if (listBox1.SelectedItem is null) return;
+
+                Termekek kivalasztott = (Termekek)listBox1.SelectedItem;
+                string productId = kivalasztott.Bvin;
+
+                if (listBox2.SelectedItem is null) return;
+
+                Options valasztott = (Options)listBox2.SelectedItem;
+                string optionId = valasztott.Bvin;
+
+
+                ApiResponse<bool> response = proxy.ProductOptionsAssignToProduct(optionId, productId, false);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+        private void opt_torles()
+        {
+            try
+            {
+                Api proxy = new Api(url, key);
+
+                if (listBox2.SelectedItem is null) return;
+
+                Options valasztott = (Options)listBox2.SelectedItem;
+                string optionId = valasztott.Bvin;
+
+                ApiResponse<bool> response = proxy.ProductOptionsDelete(optionId);
+
+                if (optionId is null)
+                {
+                    MessageBox.Show("Gebasz van!");
+                }
+                else
+                {
+                    MessageBox.Show("Sikeres törlés!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+        private void unassign()
+        {
+            try
+            {
+                Api proxy = new Api(url, key);
+
+                if (listBox1.SelectedItem is null) return;
+
+                Termekek kivalasztott = (Termekek)listBox1.SelectedItem;
+                string productId = kivalasztott.Bvin;
+
+                if (listBox2.SelectedItem is null) return;
+
+                Options valasztott = (Options)listBox2.SelectedItem;
+                string optionId = valasztott.Bvin;
+
+                ApiResponse<bool> unassignResponse = proxy.ProductOptionsUnassignFromProduct(optionId, productId);
+
+                if (optionId is null || productId is null)
+                {
+                    MessageBox.Show("Gebasz van!");
+                }
+                else
+                {
+                    MessageBox.Show("Sikeres törlés!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+        }
+
+        
     }
+
 }
