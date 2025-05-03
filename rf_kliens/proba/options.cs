@@ -9,5 +9,6 @@ namespace proba
     public class Options
     {
         public string Name { get; set; }
+        public string Bvin { get; set; }
     }
 }
