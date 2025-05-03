@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -68,32 +68,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(542, 599);
             this.dataGridView1.TabIndex = 2;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(-3, 106);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(422, 484);
-            this.listBox1.TabIndex = 3;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(982, 106);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(259, 304);
-            this.listBox2.TabIndex = 4;
-            // 
-            // termekekBindingSource
-            // 
-            this.termekekBindingSource.DataSource = typeof(proba.Termekek);
-            // 
-            // termekchoicesBindingSource
-            // 
-            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -118,6 +92,33 @@
             this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
             this.storeIdDataGridViewTextBoxColumn.Width = 150;
             // 
+            // termekchoicesBindingSource
+            // 
+            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(-3, 106);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(422, 484);
+            this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(982, 106);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(259, 304);
+            this.listBox2.TabIndex = 4;
+            // 
+            // termekekBindingSource
+            // 
+            this.termekekBindingSource.DataSource = typeof(proba.Termekek);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -131,8 +132,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
