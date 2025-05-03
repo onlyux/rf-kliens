@@ -96,6 +96,12 @@ namespace proba
             }
         }
 
+        private void button_hozzaad_Click(object sender, EventArgs e)
+        {
+            assign();
+        }
+
+
 
         private void termek_betolt()
         {
@@ -156,8 +162,8 @@ namespace proba
                     {
                         Options current = new Options
                         {
-                            Name = item.Name
-
+                            Name = item.Name,
+                            Bvin = item.Bvin
                         };
                         options.Add(current);
                     }
@@ -303,6 +309,6 @@ namespace proba
                 throw;
             }
         }
-
     }
+
 }

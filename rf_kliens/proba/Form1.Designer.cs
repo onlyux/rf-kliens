@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.button_create = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,13 +39,17 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button_hozzaad = new System.Windows.Forms.Button();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button_create
@@ -77,34 +77,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(542, 564);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // bvinDataGridViewTextBoxColumn
-            // 
-            this.bvinDataGridViewTextBoxColumn.DataPropertyName = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.HeaderText = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.bvinDataGridViewTextBoxColumn.Name = "bvinDataGridViewTextBoxColumn";
-            this.bvinDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // storeIdDataGridViewTextBoxColumn
-            // 
-            this.storeIdDataGridViewTextBoxColumn.DataPropertyName = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.HeaderText = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
-            this.storeIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // termekchoicesBindingSource
-            // 
-            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
             // 
             // listBox1
             // 
@@ -168,10 +140,6 @@
             this.textBox6.TabIndex = 10;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // termekekBindingSource
-            // 
-            this.termekekBindingSource.DataSource = typeof(proba.Termekek);
-            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -190,6 +158,39 @@
             this.button_hozzaad.TabIndex = 12;
             this.button_hozzaad.Text = "Opció hozzáadása";
             this.button_hozzaad.UseVisualStyleBackColor = true;
+            this.button_hozzaad.Click += new System.EventHandler(this.button_hozzaad_Click);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // bvinDataGridViewTextBoxColumn
+            // 
+            this.bvinDataGridViewTextBoxColumn.DataPropertyName = "Bvin";
+            this.bvinDataGridViewTextBoxColumn.HeaderText = "Bvin";
+            this.bvinDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bvinDataGridViewTextBoxColumn.Name = "bvinDataGridViewTextBoxColumn";
+            this.bvinDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // storeIdDataGridViewTextBoxColumn
+            // 
+            this.storeIdDataGridViewTextBoxColumn.DataPropertyName = "StoreId";
+            this.storeIdDataGridViewTextBoxColumn.HeaderText = "StoreId";
+            this.storeIdDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
+            this.storeIdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // termekchoicesBindingSource
+            // 
+            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
+            // 
+            // termekekBindingSource
+            // 
+            this.termekekBindingSource.DataSource = typeof(proba.Termekek);
             // 
             // Form1
             // 
@@ -212,9 +213,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
