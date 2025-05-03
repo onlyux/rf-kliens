@@ -36,13 +36,21 @@ namespace proba
         {
             termek_betolt();
             opcio_betolt();
-            
-            
+            try
+            {
+                listazas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listazas();
         }
 
         private void termek_betolt()
@@ -125,6 +133,50 @@ namespace proba
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void listazas()
+        {
+            try
+            {
+                if (listBox1.SelectedItem is null) return;
+
+                Termekek kivalasztott = (Termekek)listBox1.SelectedItem;
+                string productId = kivalasztott.Bvin;
+
+                Api proxy = new Api(url, key);
+                ApiResponse<List<OptionDTO>> response = proxy.ProductOptionsFindAllByProductId(productId);
+
+                if (response.Content == null || response.Content.Count == 0)
+                {
+                    //MessageBox.Show("No options found or API unavailable");
+                    dataGridView1.DataSource = null;
+                    return;
+                }
+
+                termekchoices.Clear();
+
+                foreach (var item in response.Content)
+                {
+                    termekchoices.Add(new Termekchoices
+                    {
+                        Name = item.Name,
+                        Bvin = item.Bvin,
+                        StoreId = (int)item.StoreId
+                    });
+                }
+
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = termekchoices;
+                dataGridView1.Refresh();
+
+                //MessageBox.Show($"Found {response.Content.Count} options");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}\n\nStack Trace:\n{ex.StackTrace}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
