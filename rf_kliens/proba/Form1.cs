@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace proba
 {
@@ -52,6 +53,49 @@ namespace proba
         {
             listazas();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            string lastValidInput = "";
+            string currentText = textBox6.Text;
+            if (!string.IsNullOrWhiteSpace(textBox6.Text))
+            {
+                if (Regex.IsMatch(currentText, @"^(0|[1-9][0-9]*)$"))
+                {
+                    lastValidInput = currentText;
+                }
+                else
+                {
+
+                    textBox6.Text = lastValidInput;
+                    textBox6.SelectionStart = textBox6.Text.Length;
+                }
+            }
+        }
+
+
+        private void button_create_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(textBox6.Text))
+            {
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                    MessageBox.Show("Hiba: Üres az 1. mező! Adj meg legalább egy karaktert.");
+                if (string.IsNullOrWhiteSpace(textBox2.Text))
+                    MessageBox.Show("Hiba: Üres a 2. mező! Adj meg legalább egy karaktert.");
+                if (string.IsNullOrWhiteSpace(textBox5.Text))
+                    MessageBox.Show("Hiba: Üres az 5. mező! Adj meg legalább egy karaktert.");
+                if (string.IsNullOrWhiteSpace(textBox6.Text))
+                    MessageBox.Show("Hiba: Üres a 6. mező! Adj meg legalább egy karaktert.");
+            }
+            else
+            {
+                create();
+            }
+        }
+
 
         private void termek_betolt()
         {
@@ -179,5 +223,59 @@ namespace proba
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void create()
+        {
+            // Termékek behívása API-on keresztül
+            try
+            {
+                Api proxy = new Api(url, key);
+
+                var option = new OptionDTO();
+
+                option.Name = textBox1.Text;
+                option.OptionType = OptionTypesDTO.RadioButtonList;
+                option.Items.Add(new OptionItemDTO
+                {
+                    Name = textBox2.Text
+                });
+                if (!string.IsNullOrWhiteSpace(textBox3.Text))
+                {
+                    option.Items.Add(new OptionItemDTO
+                    {
+                        Name = textBox3.Text
+                    });
+                }
+                if (!string.IsNullOrWhiteSpace(textBox4.Text))
+                {
+                    option.Items.Add(new OptionItemDTO
+                    {
+                        Name = textBox4.Text
+                    });
+                }
+                option.Settings.Add(new OptionSettingDTO
+                {
+                    Key = textBox5.Text,
+                    Value = textBox6.Text
+                });
+
+                ApiResponse<OptionDTO> optionResponse = proxy.ProductOptionsCreate(option);
+                if (optionResponse.Content is null)
+                {
+                    MessageBox.Show("Gebasz van!");
+                }
+                else
+                {
+                    MessageBox.Show("Sikeres hozzáadás!");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
