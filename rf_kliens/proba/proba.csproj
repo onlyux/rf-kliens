@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hotcakes.CommerceDTO">
-      <HintPath>..\..\Hotcakes.CommerceDTO.dll</HintPath>
+      <HintPath>D:\Downloads\Hotcakes.CommerceDTO.dll</HintPath>
     </Reference>
     <Reference Include="Hotcakes.Web">
-      <HintPath>..\..\Hotcakes.Web.dll</HintPath>
+      <HintPath>D:\Downloads\Hotcakes.Web.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
