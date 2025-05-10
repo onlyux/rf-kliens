@@ -5,6 +5,7 @@ using proba;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace YourNamespace.Managers
 {
@@ -86,6 +87,8 @@ namespace YourNamespace.Managers
             {
                 Api proxy = new Api(_url, _key);
                 ApiResponse<bool> response = proxy.ProductOptionsAssignToProduct(optionId, productId, false);
+                var option = proxy.ProductOptionsFind(optionId).Content;
+                ApiResponse<OptionDTO> response1 = proxy.ProductOptionsUpdate(option);
                 return response.Content;
             }
             catch (Exception ex)
@@ -101,6 +104,8 @@ namespace YourNamespace.Managers
             {
                 Api proxy = new Api(_url, _key);
                 ApiResponse<bool> response = proxy.ProductOptionsUnassignFromProduct(optionId, productId);
+                var option = proxy.ProductOptionsFind(optionId).Content;
+                ApiResponse<OptionDTO> response1 = proxy.ProductOptionsUpdate(option);
                 return response.Content;
             }
             catch (Exception ex)

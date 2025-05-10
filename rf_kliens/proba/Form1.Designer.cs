@@ -43,7 +43,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button_hozzaad = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,7 +51,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,16 +170,6 @@
             this.textBox6.TabIndex = 10;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1164, 106);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(450, 304);
-            this.dataGridView2.TabIndex = 11;
-            // 
             // button_hozzaad
             // 
             this.button_hozzaad.Location = new System.Drawing.Point(1164, 416);
@@ -242,7 +230,6 @@
             this.Controls.Add(this.button_unassign);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_hozzaad);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -258,7 +245,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -281,7 +267,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button_hozzaad;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_unassign;
