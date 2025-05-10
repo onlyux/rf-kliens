@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using YourNamespace.Managers;
+using Kliens.Managers;
 using System.Runtime.Remoting.Contexts;
 using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Kliens.Interfaces;
+using Kliens.Managers;
+using Kliens.Wrappers;
 
 
 namespace proba
@@ -18,9 +21,9 @@ namespace proba
         List<Options> options = new List<Options>();
         List<Termekchoices> termekchoices = new List<Termekchoices>();
 
-        private readonly ProductManager _productManager;
-        private readonly OptionManager _optionManager;
-        private readonly OptionCreator _optionCreator;
+        private readonly IProductManager _productManager;
+        private readonly IOptionManager _optionManager;
+        private readonly IOptionCreator _optionCreator;
 
         public Form1()
         {
@@ -28,9 +31,10 @@ namespace proba
             url = "http://rendfejl10002.northeurope.cloudapp.azure.com:8080/";
             key = "1-c4de6d11-f89c-40e7-82d8-cf7a1365cdd2";
 
-            _productManager = new ProductManager(url, key);
-            _optionManager = new OptionManager(url, key);
-            _optionCreator = new OptionCreator(url, key);
+            var apiProxy = new ApiProxy(url, key);
+            _productManager = new ProductManager(apiProxy);
+            _optionManager = new OptionManager(apiProxy);
+            _optionCreator = new OptionCreator(apiProxy);
         }
 
 

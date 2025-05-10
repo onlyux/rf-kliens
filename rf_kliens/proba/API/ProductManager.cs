@@ -1,22 +1,25 @@
-﻿using Hotcakes.CommerceDTO.v1;
-using Hotcakes.CommerceDTO.v1.Catalog;
-using Hotcakes.CommerceDTO.v1.Client;
+﻿using Hotcakes.CommerceDTO.v1.Catalog;
+using Hotcakes.CommerceDTO.v1;
+using Kliens.Interfaces;
+using Kliens.Wrappers;
 using proba;
-using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System;
 
-namespace YourNamespace.Managers
+namespace Kliens.Managers
 {
-    public class ProductManager
+    public class ProductManager : IProductManager
     {
-        private readonly string _url;
-        private readonly string _key;
+        private readonly IApiProxy _apiProxy;
 
-        public ProductManager(string url, string key)
+        public ProductManager(IApiProxy apiProxy)
         {
-            _url = url;
-            _key = key;
+            _apiProxy = apiProxy;
+        }
+
+        public ProductManager(string url, string key) : this(new ApiProxy(url, key))
+        {
         }
 
         public List<Termekek> LoadProducts()
@@ -24,8 +27,7 @@ namespace YourNamespace.Managers
             var termekek = new List<Termekek>();
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<List<ProductDTO>> api_termek = proxy.ProductsFindAll();
+                ApiResponse<List<ProductDTO>> api_termek = _apiProxy.ProductsFindAll();
 
                 if (api_termek.Content != null)
                 {

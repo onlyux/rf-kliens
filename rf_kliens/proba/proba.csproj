@@ -55,6 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\APIProxy.cs" />
+    <Compile Include="API\IAPIProxy.cs" />
+    <Compile Include="API\IOptionCreator.cs" />
+    <Compile Include="API\IOptionManager.cs" />
+    <Compile Include="API\IProductManager.cs" />
     <Compile Include="API\ProductManager.cs" />
     <Compile Include="API\OptionCreator.cs" />
     <Compile Include="API\OptionManager.cs" />

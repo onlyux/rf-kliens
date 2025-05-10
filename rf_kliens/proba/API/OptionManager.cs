@@ -1,23 +1,25 @@
-﻿using Hotcakes.CommerceDTO.v1;
-using Hotcakes.CommerceDTO.v1.Catalog;
-using Hotcakes.CommerceDTO.v1.Client;
+﻿using Hotcakes.CommerceDTO.v1.Catalog;
+using Hotcakes.CommerceDTO.v1;
+using Kliens.Interfaces;
+using Kliens.Wrappers;
 using proba;
-using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System;
 
-namespace YourNamespace.Managers
+namespace Kliens.Managers
 {
-    public class OptionManager
+    public class OptionManager : IOptionManager
     {
-        private readonly string _url;
-        private readonly string _key;
+        private readonly IApiProxy _apiProxy;
 
-        public OptionManager(string url, string key)
+        public OptionManager(IApiProxy apiProxy)
         {
-            _url = url;
-            _key = key;
+            _apiProxy = apiProxy;
+        }
+
+        public OptionManager(string url, string key) : this(new ApiProxy(url, key))
+        {
         }
 
         public List<Options> LoadOptions()
@@ -25,8 +27,7 @@ namespace YourNamespace.Managers
             var options = new List<Options>();
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<List<OptionDTO>> response = proxy.ProductOptionsFindAll();
+                ApiResponse<List<OptionDTO>> response = _apiProxy.ProductOptionsFindAll();
 
                 if (response.Content != null)
                 {
@@ -57,8 +58,7 @@ namespace YourNamespace.Managers
             var termekchoices = new List<Termekchoices>();
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<List<OptionDTO>> response = proxy.ProductOptionsFindAllByProductId(productId);
+                ApiResponse<List<OptionDTO>> response = _apiProxy.ProductOptionsFindAllByProductId(productId);
 
                 if (response.Content != null)
                 {
@@ -85,10 +85,9 @@ namespace YourNamespace.Managers
         {
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<bool> response = proxy.ProductOptionsAssignToProduct(optionId, productId, false);
-                var option = proxy.ProductOptionsFind(optionId).Content;
-                ApiResponse<OptionDTO> response1 = proxy.ProductOptionsUpdate(option);
+                ApiResponse<bool> response = _apiProxy.ProductOptionsAssignToProduct(optionId, productId, false);
+                var option = _apiProxy.ProductOptionsFind(optionId).Content;
+                ApiResponse<OptionDTO> response1 = _apiProxy.ProductOptionsUpdate(option);
                 return response.Content;
             }
             catch (Exception ex)
@@ -102,10 +101,9 @@ namespace YourNamespace.Managers
         {
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<bool> response = proxy.ProductOptionsUnassignFromProduct(optionId, productId);
-                var option = proxy.ProductOptionsFind(optionId).Content;
-                ApiResponse<OptionDTO> response1 = proxy.ProductOptionsUpdate(option);
+                ApiResponse<bool> response = _apiProxy.ProductOptionsUnassignFromProduct(optionId, productId);
+                var option = _apiProxy.ProductOptionsFind(optionId).Content;
+                ApiResponse<OptionDTO> response1 = _apiProxy.ProductOptionsUpdate(option);
                 return response.Content;
             }
             catch (Exception ex)
@@ -119,8 +117,7 @@ namespace YourNamespace.Managers
         {
             try
             {
-                Api proxy = new Api(_url, _key);
-                ApiResponse<bool> response = proxy.ProductOptionsDelete(optionId);
+                ApiResponse<bool> response = _apiProxy.ProductOptionsDelete(optionId);
                 return response.Content;
             }
             catch (Exception ex)
