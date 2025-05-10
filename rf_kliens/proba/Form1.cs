@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using YourNamespace.Managers;
+using System.Runtime.Remoting.Contexts;
+using System.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace proba
@@ -42,6 +45,7 @@ namespace proba
             listBox2.DisplayMember = "Name";
 
             listazas();
+
 
         }
         private void listazas()
@@ -160,6 +164,43 @@ namespace proba
             bool success = _optionManager.UnassignOptionFromProduct(optionId, productId);
             if (success) listazas();
         }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox7.Text))
+            {
+                listBox1.DataSource = termekek;
+            }
+            else
+            {
+                var filteredList = termekek
+                .Where(x => x.ProductName.IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+                listBox1.DataSource = filteredList;
+            }
+            listBox1.DisplayMember = "ProductName";
+        }
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox8.Text))
+            {
+                listBox2.DataSource = options;
+
+            }
+            else
+            {
+                var filteredList = options
+                .Where(x => x.Name.IndexOf(textBox8.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+                listBox2.DataSource = filteredList;
+
+            }
+
+        }
+
+
+
     }
 
 }
+

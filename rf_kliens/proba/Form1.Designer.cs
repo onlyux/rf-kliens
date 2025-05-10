@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.button_create = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,15 +46,13 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button_hozzaad = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_unassign = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,13 +82,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(542, 564);
             this.dataGridView1.TabIndex = 2;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // bvinDataGridViewTextBoxColumn
+            // 
+            this.bvinDataGridViewTextBoxColumn.DataPropertyName = "Bvin";
+            this.bvinDataGridViewTextBoxColumn.HeaderText = "Bvin";
+            this.bvinDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bvinDataGridViewTextBoxColumn.Name = "bvinDataGridViewTextBoxColumn";
+            this.bvinDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // storeIdDataGridViewTextBoxColumn
+            // 
+            this.storeIdDataGridViewTextBoxColumn.DataPropertyName = "StoreId";
+            this.storeIdDataGridViewTextBoxColumn.HeaderText = "StoreId";
+            this.storeIdDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
+            this.storeIdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // termekchoicesBindingSource
+            // 
+            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(21, 106);
+            this.listBox1.Location = new System.Drawing.Point(21, 146);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(324, 564);
+            this.listBox1.Size = new System.Drawing.Size(324, 524);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -94,9 +124,9 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(899, 106);
+            this.listBox2.Location = new System.Drawing.Point(899, 146);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(259, 304);
+            this.listBox2.Size = new System.Drawing.Size(259, 264);
             this.listBox2.TabIndex = 4;
             // 
             // textBox1
@@ -172,34 +202,6 @@
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // bvinDataGridViewTextBoxColumn
-            // 
-            this.bvinDataGridViewTextBoxColumn.DataPropertyName = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.HeaderText = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.bvinDataGridViewTextBoxColumn.Name = "bvinDataGridViewTextBoxColumn";
-            this.bvinDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // storeIdDataGridViewTextBoxColumn
-            // 
-            this.storeIdDataGridViewTextBoxColumn.DataPropertyName = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.HeaderText = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
-            this.storeIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // termekchoicesBindingSource
-            // 
-            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
-            // 
             // termekekBindingSource
             // 
             this.termekekBindingSource.DataSource = typeof(proba.Termekek);
@@ -214,11 +216,29 @@
             this.button_unassign.UseVisualStyleBackColor = true;
             this.button_unassign.Click += new System.EventHandler(this.button_unassign_Click);
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(21, 106);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(324, 26);
+            this.textBox7.TabIndex = 15;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(899, 106);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(259, 26);
+            this.textBox8.TabIndex = 16;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1756, 821);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button_unassign);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_hozzaad);
@@ -237,8 +257,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,6 +285,8 @@
         private System.Windows.Forms.Button button_hozzaad;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_unassign;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
