@@ -6,7 +6,7 @@ using Kliens.Interfaces;
 using Kliens.Managers;
 using System.Collections.Generic;
 
-namespace UnitTestProject
+namespace proba.API
 {
     [TestFixture]
     public class OptionCreatorTests
