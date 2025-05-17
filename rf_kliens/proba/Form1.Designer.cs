@@ -50,6 +50,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
@@ -74,11 +75,11 @@
             this.bvinDataGridViewTextBoxColumn,
             this.storeIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.termekchoicesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(600, 104);
+            this.dataGridView1.Location = new System.Drawing.Point(600, 144);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 564);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 524);
             this.dataGridView1.TabIndex = 2;
             // 
             // nameDataGridViewTextBoxColumn
@@ -230,11 +231,21 @@
             this.listBox3.Size = new System.Drawing.Size(252, 244);
             this.listBox3.TabIndex = 17;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(719, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1756, 821);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -284,6 +295,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label1;
     }
 }
 

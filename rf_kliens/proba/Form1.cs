@@ -8,6 +8,9 @@ using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Kliens.Interfaces;
 using Kliens.Wrappers;
+using Hotcakes.CommerceDTO.v1.Catalog;
+using Hotcakes.CommerceDTO.v1.Client;
+using Hotcakes.CommerceDTO.v1;
 
 
 namespace proba
@@ -19,6 +22,7 @@ namespace proba
         List<Termekek> termekek = new List<Termekek>();
         List<Options> options = new List<Options>();
         List<Termekchoices> termekchoices = new List<Termekchoices>();
+        List<Kateg> kateg = new List<Kateg>();
 
         private readonly IProductManager _productManager;
         private readonly IOptionManager _optionManager;
@@ -48,7 +52,7 @@ namespace proba
             listBox2.DisplayMember = "Name";
 
             listazas();
-
+            kategoria();
 
         }
         private void listazas()
@@ -81,6 +85,15 @@ namespace proba
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listazas();
+
+            var jelen = from x in termekek
+                        where x.ProductName == ((Termekek)listBox1.SelectedItem).ProductName
+                        select x;
+
+            if (jelen.Any())
+            {
+                label1.Text = jelen.First().ProductName + " termék opciói";
+            }
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -199,6 +212,43 @@ namespace proba
 
             }
 
+        }
+        private void szűrő()
+        {
+
+        }
+        private void kategoria()
+        {
+            Api proxy = new Api(url, key);
+            try
+            {
+                ApiResponse<List<CategorySnapshotDTO>> response = proxy.CategoriesFindAll();
+
+                if (response.Content != null)
+                {
+                    foreach (var item in response.Content)
+                    {
+                        kateg.Add(new Kateg
+                        {
+                            Bvin = item.Bvin,
+                            Name = item.Name
+                        });
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("No categories found.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                listBox3.DataSource = kateg;
+                listBox3.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading categories: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            
         }
 
 
