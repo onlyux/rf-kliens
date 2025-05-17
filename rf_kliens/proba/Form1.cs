@@ -84,15 +84,32 @@ namespace proba
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBox1.SelectedItem == null)
+            {
+                label1.Text = "Nincs kiválasztott termék";
+                return;
+            }
+
             listazas();
 
-            var jelen = from x in termekek
-                        where x.ProductName == ((Termekek)listBox1.SelectedItem).ProductName
-                        select x;
-
-            if (jelen.Any())
+            try
             {
-                label1.Text = jelen.First().ProductName + " termék opciói";
+                var selectedProduct = (Termekek)listBox1.SelectedItem;
+                var jelen = termekek.Where(x => x.ProductName == selectedProduct.ProductName);
+
+                if (jelen.Any())
+                {
+                    label1.Text = jelen.First().ProductName + " termék opciói";
+                }
+                else
+                {
+                    label1.Text = "Nincs ilyen termék a listában";
+                }
+            }
+            catch (Exception ex)
+            {
+                label1.Text = "Hiba történt";
+                MessageBox.Show($"Hiba a termék betöltésekor: {ex.Message}");
             }
         }
 
@@ -213,10 +230,11 @@ namespace proba
             }
 
         }
-        private void szűrő()
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            szurtkat();
         }
+
         private void kategoria()
         {
             Api proxy = new Api(url, key);
@@ -250,9 +268,55 @@ namespace proba
             }
             
         }
+        private void szurtkat()
+        {
+            if (listBox3.SelectedItem == null)
+            {
+                MessageBox.Show("Select a category from the list!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            var selectedCategory = (Kateg)listBox3.SelectedItem;
+            var categoryId = selectedCategory.Bvin;
 
+            try
+            {
+                Api proxy = new Api(url, key);
 
+                var page = 1;
+                var pageSize = int.MaxValue; 
+
+                ApiResponse<PageOfProducts> response = proxy.ProductsFindForCategory(categoryId, page, pageSize);
+
+                if (response.Content != null && response.Content.Products.Count > 0)
+                {
+                    termekek.Clear();
+                    foreach (var product in response.Content.Products)
+                    {
+                        termekek.Add(new Termekek
+                        {
+                            Bvin = product.Bvin,
+                            ProductName = product.ProductName,
+                        });
+                    }
+
+                    listBox1.DataSource = null;
+                    listBox1.DataSource = termekek;
+                    listBox1.DisplayMember = "ProductName";
+
+                }
+                else
+                {
+                    MessageBox.Show("No products found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error while loading products: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
     }
 
 }
