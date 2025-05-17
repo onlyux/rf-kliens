@@ -49,6 +49,7 @@
             this.button_unassign = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
@@ -56,7 +57,7 @@
             // 
             // button_create
             // 
-            this.button_create.Location = new System.Drawing.Point(899, 615);
+            this.button_create.Location = new System.Drawing.Point(1148, 613);
             this.button_create.Name = "button_create";
             this.button_create.Size = new System.Drawing.Size(259, 55);
             this.button_create.TabIndex = 1;
@@ -73,7 +74,7 @@
             this.bvinDataGridViewTextBoxColumn,
             this.storeIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.termekchoicesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(351, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(600, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -112,7 +113,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(21, 146);
+            this.listBox1.Location = new System.Drawing.Point(270, 144);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(324, 524);
             this.listBox1.TabIndex = 3;
@@ -122,49 +123,49 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(899, 146);
+            this.listBox2.Location = new System.Drawing.Point(1148, 144);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(259, 264);
             this.listBox2.TabIndex = 4;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(899, 416);
+            this.textBox1.Location = new System.Drawing.Point(1148, 414);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 26);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(899, 448);
+            this.textBox2.Location = new System.Drawing.Point(1148, 446);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(259, 26);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(899, 480);
+            this.textBox3.Location = new System.Drawing.Point(1148, 478);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(259, 26);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(899, 512);
+            this.textBox4.Location = new System.Drawing.Point(1148, 510);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(259, 26);
             this.textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(899, 544);
+            this.textBox5.Location = new System.Drawing.Point(1148, 542);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(259, 26);
             this.textBox5.TabIndex = 9;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(899, 576);
+            this.textBox6.Location = new System.Drawing.Point(1148, 574);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(259, 26);
             this.textBox6.TabIndex = 10;
@@ -172,7 +173,7 @@
             // 
             // button_hozzaad
             // 
-            this.button_hozzaad.Location = new System.Drawing.Point(1164, 416);
+            this.button_hozzaad.Location = new System.Drawing.Point(1413, 414);
             this.button_hozzaad.Name = "button_hozzaad";
             this.button_hozzaad.Size = new System.Drawing.Size(195, 58);
             this.button_hozzaad.TabIndex = 12;
@@ -182,7 +183,7 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(1164, 480);
+            this.button_delete.Location = new System.Drawing.Point(1413, 478);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(195, 58);
             this.button_delete.TabIndex = 13;
@@ -196,7 +197,7 @@
             // 
             // button_unassign
             // 
-            this.button_unassign.Location = new System.Drawing.Point(1164, 547);
+            this.button_unassign.Location = new System.Drawing.Point(1413, 545);
             this.button_unassign.Name = "button_unassign";
             this.button_unassign.Size = new System.Drawing.Size(195, 55);
             this.button_unassign.TabIndex = 14;
@@ -206,7 +207,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(21, 106);
+            this.textBox7.Location = new System.Drawing.Point(270, 104);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(324, 26);
             this.textBox7.TabIndex = 15;
@@ -214,17 +215,27 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(899, 106);
+            this.textBox8.Location = new System.Drawing.Point(1148, 104);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(259, 26);
             this.textBox8.TabIndex = 16;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 20;
+            this.listBox3.Location = new System.Drawing.Point(12, 144);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(252, 244);
+            this.listBox3.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1756, 821);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button_unassign);
@@ -272,6 +283,7 @@
         private System.Windows.Forms.Button button_unassign;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 

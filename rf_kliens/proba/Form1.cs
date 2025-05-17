@@ -7,7 +7,6 @@ using System.Runtime.Remoting.Contexts;
 using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Kliens.Interfaces;
-using Kliens.Managers;
 using Kliens.Wrappers;
 
 
