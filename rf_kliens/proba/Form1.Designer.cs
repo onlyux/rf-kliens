@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.button_create = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,10 +47,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bvinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.storeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termekchoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
@@ -70,10 +67,6 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.bvinDataGridViewTextBoxColumn,
-            this.storeIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.termekchoicesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(600, 144);
             this.dataGridView1.Name = "dataGridView1";
@@ -103,6 +96,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.textBox1.Location = new System.Drawing.Point(1148, 414);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 26);
@@ -208,38 +202,6 @@
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "label1";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // bvinDataGridViewTextBoxColumn
-            // 
-            this.bvinDataGridViewTextBoxColumn.DataPropertyName = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.HeaderText = "Bvin";
-            this.bvinDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.bvinDataGridViewTextBoxColumn.Name = "bvinDataGridViewTextBoxColumn";
-            this.bvinDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // storeIdDataGridViewTextBoxColumn
-            // 
-            this.storeIdDataGridViewTextBoxColumn.DataPropertyName = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.HeaderText = "StoreId";
-            this.storeIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.storeIdDataGridViewTextBoxColumn.Name = "storeIdDataGridViewTextBoxColumn";
-            this.storeIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // termekchoicesBindingSource
-            // 
-            this.termekchoicesBindingSource.DataSource = typeof(proba.Termekchoices);
-            // 
-            // termekekBindingSource
-            // 
-            this.termekekBindingSource.DataSource = typeof(proba.Termekek);
             // 
             // Form1
             // 
