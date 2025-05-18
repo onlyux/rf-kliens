@@ -42,6 +42,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button_hozzaad = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+
             this.button_unassign = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -50,34 +51,42 @@
             this.termekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+
             this.panel4.SuspendLayout();
+
             this.SuspendLayout();
             // 
             // button_create
             // 
+
             this.button_create.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_create.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(111)))), ((int)(((byte)(81)))));
             this.button_create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_create.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.button_create.Location = new System.Drawing.Point(1357, 851);
+
             this.button_create.Name = "button_create";
             this.button_create.Size = new System.Drawing.Size(259, 55);
             this.button_create.TabIndex = 1;
@@ -93,26 +102,33 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DataSource = this.termekchoicesBindingSource;
+
             this.dataGridView1.Location = new System.Drawing.Point(688, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(528, 453);
+
             this.dataGridView1.TabIndex = 2;
             // 
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+
+
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(3, 3);
             this.listBox1.Name = "listBox1";
+
             this.listBox1.Size = new System.Drawing.Size(318, 524);
+
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
+
             this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.listBox2.FormattingEnabled = true;
@@ -120,69 +136,83 @@
             this.listBox2.Location = new System.Drawing.Point(3, 3);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(448, 284);
+
             this.listBox2.TabIndex = 4;
             // 
             // textBox1
             // 
+
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox1.Location = new System.Drawing.Point(1357, 615);
+
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 26);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
+
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox2.Location = new System.Drawing.Point(1357, 655);
+
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(259, 26);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
+
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox3.Location = new System.Drawing.Point(1357, 695);
+
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(259, 26);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
+
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox4.Location = new System.Drawing.Point(1357, 733);
+
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(259, 26);
             this.textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
+
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox5.Location = new System.Drawing.Point(1357, 773);
+
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(259, 26);
             this.textBox5.TabIndex = 9;
             // 
             // textBox6
             // 
+
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.textBox6.Location = new System.Drawing.Point(1357, 813);
+
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(259, 26);
             this.textBox6.TabIndex = 10;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
+
             // button_hozzaad
             // 
             this.button_hozzaad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,11 +225,13 @@
             this.button_hozzaad.Size = new System.Drawing.Size(454, 58);
             this.button_hozzaad.TabIndex = 12;
             this.button_hozzaad.Text = "Opció hozzáadása a kiválasztott termékhez";
+
             this.button_hozzaad.UseVisualStyleBackColor = false;
             this.button_hozzaad.Click += new System.EventHandler(this.button_hozzaad_Click);
             // 
             // button_delete
             // 
+
             this.button_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(111)))), ((int)(((byte)(81)))));
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -210,11 +242,13 @@
             this.button_delete.Size = new System.Drawing.Size(454, 58);
             this.button_delete.TabIndex = 13;
             this.button_delete.Text = "Opció törlése az adatbázisból";
+
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_unassign
             // 
+
             this.button_unassign.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_unassign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(111)))), ((int)(((byte)(81)))));
@@ -412,16 +446,19 @@
             this.label11.Size = new System.Drawing.Size(104, 20);
             this.label11.TabIndex = 29;
             this.label11.Text = "Opció szűrő";
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(225)))), ((int)(((byte)(210)))));
+
             this.ClientSize = new System.Drawing.Size(1748, 1069);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
+
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -430,8 +467,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
+
             this.Controls.Add(this.button_unassign);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_hozzaad);
@@ -443,19 +482,24 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_create);
+
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekchoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.termekekBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
+
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,24 +524,28 @@
         private System.Windows.Forms.Button button_hozzaad;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_unassign;
+
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+
     }
 }
 
